@@ -155,6 +155,8 @@ class SwipeActionsView: UIView {
             button.frame = wrapperView.contentRect
             button.maximumImageHeight = maximumImageHeight
             button.verticalAlignment = options.buttonVerticalAlignment
+          //  button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
+            //button.imageView?.contentMode = .right
             button.shouldHighlight = action.hasBackgroundColor
             
             wrapperView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -184,8 +186,8 @@ class SwipeActionsView: UIView {
     }
     
     func buttonEdgeInsets(fromOptions options: SwipeOptions) -> UIEdgeInsets {
-        let padding = options.buttonPadding ?? 8
-        return UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        let padding = options.buttonPadding ?? UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        return padding
     }
     
     func setExpanded(expanded: Bool, feedback: Bool = false) {
